@@ -1,5 +1,4 @@
-<script setup>
-import { defineProps } from 'vue'
+<script lang="ts" setup>
 const props = defineProps({
   text: { type: String, required: true }
 })

@@ -1,13 +1,14 @@
 <script setup lang="ts">
-import { defineProps } from 'vue'
 import Button from './forms/Button.vue'
-// const props = defineProps<{ title: string; links: [{ id: number; path: string; name: string }] }>({
-//   title: { type: String, required: true },
-//   links: { type: Array, required: true }
-// })
+interface link {
+  id: number
+  path: string
+  name: string
+}
+
 interface Props {
   title: string
-  links: { id: string; path: string; name: string }[]
+  links: link[]
 }
 const props = defineProps<Props>()
 </script>
