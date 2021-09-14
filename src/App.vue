@@ -13,11 +13,9 @@ const links: link[] = [
 </script>
 
 <template>
-  <h2>hello</h2>
-  <Navbar title="DemoApp" :links="links" />
-  <div class="pt-20">
+  <Navbar title="DemoApp" :links="links">
     <router-view />
-  </div>
+  </Navbar>
 </template>
 
 <style></style>
