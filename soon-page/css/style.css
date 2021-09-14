@@ -668,3 +668,6 @@ textarea {
     /* Apply some styles */
   }
 }
+.form-control {
+  color: #fff;
+}
