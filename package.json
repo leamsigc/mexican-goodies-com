@@ -1,10 +1,9 @@
 {
-  "name": "mexica-goodies.com",
+  "name": "mexican-goodies.com",
   "version": "0.0.0",
   "scripts": {
     "dev": "vite",
-    "build:tsc": "vue-tsc --noEmit && vite build",
-    "build": "vite build",
+    "build": "vue-tsc --noEmit && vite build",
     "serve": "vite preview"
   },
   "dependencies": {
