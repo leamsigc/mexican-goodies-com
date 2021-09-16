@@ -104,7 +104,8 @@ export default {
       <div class="card text-center shadow-md">
         <h2 class="card-title">Register new business</h2>
         <div class="card-body">
-          <form name="new-business" netlify class="max-w-md">
+          <form name="new-business" class="max-w-md" method="post" data-netlify="true" data-netlify-honeypot="bot-field">
+            <input type="hidden" name="form-name" value="new-business" />
             <div class="form-control">
               <label class="label">
                 <span class="label-text">Name</span>
