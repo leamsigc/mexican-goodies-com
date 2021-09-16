@@ -1,14 +1,13 @@
 <script lang="ts">
 import TheFooter from '../components/TheFooter.vue'
-import { ref, computed, watchEffect, Ref, watch, reactive, onUnmounted } from 'vue'
-import { count } from 'console'
+import { reactive, onUnmounted } from 'vue'
 
 export default {
   components: {
     TheFooter
   },
   setup() {
-    const futureDate = new Date('2021-11-25T00:00:00')
+    const futureDate = new Date('2021-09-25T00:00:00')
     const getDateDiff = (date1: Date, date2: Date) => {
       const diff = new Date(date2.getTime() - date1.getTime())
       const numberDiff = Number(date1) - Number(date2)
@@ -42,7 +41,6 @@ export default {
     let timeState = reactive(getDateDiff(now, futureDate))
     const timer = setInterval(() => {
       const { year, month, day, hour, min, sec } = getDateDiff(new Date(), futureDate)
-      console.log(month)
       timeState.sec = sec
       timeState.min = min
       timeState.hour = hour
@@ -60,7 +58,9 @@ export default {
   <div class="min-h-screen grid grid-cols-1 md:grid-cols-2">
     <div class="text-center grid place-content-center bg-base-200">
       <div class="max-w-md">
-        <h1 class="mb-5 text-5xl font-bold"><strong>MEXICANGOODIES</strong></h1>
+        <h1 class="mb-5 text-5xl font-bold">
+          <strong> <span class="text-green-500">MEXI</span><span class="text-red-500">CANGOO</span><span class="text-gray-100">DIES</span></strong>
+        </h1>
         <h6>The directory of all Mexican Goodies is under construction</h6>
         <p class="mb-5">
           <small> Mexican-Goodies.com Made by <a href="https://leamsigc.com/" target="_blank" class="link link-accent">leamsigc</a> </small>
