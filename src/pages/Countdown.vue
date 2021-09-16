@@ -59,7 +59,7 @@ export default {
     <div class="text-center grid place-content-center bg-base-200">
       <div class="max-w-md">
         <h1 class="mb-5 text-5xl font-bold">
-          <strong> <span class="text-green-500">MEXI</span><span class="text-red-500">CANGOO</span><span class="text-gray-100">DIES</span></strong>
+          <strong> <span class="text-green-500">MEXI</span><span class="text-gray-100">CANGOO</span><span class="text-red-500">DIES</span></strong>
         </h1>
         <h6>The directory of all Mexican Goodies is under construction</h6>
         <p class="mb-5">
