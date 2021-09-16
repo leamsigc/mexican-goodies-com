@@ -128,7 +128,10 @@
         </div>
       </div>
       <div class="bg-cover vh-100 " style="background-image:url(images/img_bg_1.jpg);">
-        <form class="form-inline form-container" name="new-business" netlify>
+        <form class="form-inline form-container" name="new-business" data-netlify="true"
+          data-netlify-honeypot="bot-field" method="post">
+
+          <input type="hidden" name="form-name" value="new-business" />
           <h2 class="ml-1">Add business now </h2>
           <div class="form-group">
             <label for="email">
