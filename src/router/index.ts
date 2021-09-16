@@ -13,6 +13,7 @@ const routes: Array<RouteRecordRaw> = [
       {
         path: '',
         name: 'home',
+        redirect: 'countdown',
         component: Home
       },
       {

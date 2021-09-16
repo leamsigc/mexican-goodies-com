@@ -60,7 +60,11 @@ export default {
   <div class="min-h-screen grid grid-cols-1 md:grid-cols-2">
     <div class="text-center grid place-content-center bg-base-200">
       <div class="max-w-md">
-        <h1 class="mb-5 text-5xl font-bold"><strong>Mexican Goodies</strong> <small>is comming...</small></h1>
+        <h1 class="mb-5 text-5xl font-bold"><strong>MEXICANGOODIES</strong></h1>
+        <h6>The directory of all Mexican Goodies is under construction</h6>
+        <p class="mb-5">
+          <small> Mexican-Goodies.com Made by <a href="https://leamsigc.com/" target="_blank" class="link link-accent">leamsigc</a> </small>
+        </p>
         <div class="grid grid-flow-col gap-5 place-content-center text-center auto-cols-max">
           <div class="flex flex-col p-2 bg-neutral rounded-box text-neutral-content">
             <span class="font-mono text-5xl countdown">
@@ -87,6 +91,13 @@ export default {
             sec
           </div>
         </div>
+        <p class="mt-8">
+          <span class="block mb-5"> Our webiste is opening soon. </span>
+          <strong class="font-semibold text-lg text-green-600"> Please register your business! </strong>
+        </p>
+      </div>
+      <div class="mt-5">
+        <small> Have questins for me send me a email to <a href="mailto:ismael@leamsigc.com" class="link">Ismael@leamsigc.com</a> </small>
       </div>
     </div>
     <div class="form-container grid place-content-center p-2 bg-gray-900">
@@ -96,22 +107,37 @@ export default {
           <form name="new-business" netlify class="max-w-md">
             <div class="form-control">
               <label class="label">
-                <span class="label-text">Username</span>
+                <span class="label-text">Name</span>
               </label>
-              <input placeholder="username" class="input input-bordered" type="text" />
+              <input placeholder="Name" class="input input-bordered" type="text" name="name" required />
             </div>
             <div class="form-control">
               <label class="label">
-                <span class="label-text">Username</span>
+                <span class="label-text">Email</span>
               </label>
-              <input placeholder="username" class="input input-bordered" type="text" />
+              <input placeholder="email" class="input input-bordered" type="email" required name="email" />
+            </div>
+            <div class="form-control">
+              <label class="label">
+                <span class="label-text">Address</span>
+              </label>
+              <input placeholder="Address" class="input input-bordered" type="text" required name="Address" />
+            </div>
+            <div class="form-control">
+              <label class="label">
+                <span class="label-text">Contact</span>
+              </label>
+              <input placeholder="Contact" class="input input-bordered" type="text" required name="Contact" />
             </div>
 
             <div class="form-control">
               <label class="label">
-                <span class="label-text">Your bio</span>
+                <span class="label-text">Description</span>
               </label>
-              <textarea class="textarea h-24 textarea-bordered" placeholder="Bio"></textarea>
+              <textarea class="textarea h-24 textarea-bordered" placeholder="Business description" name="Description"></textarea>
+            </div>
+            <div class="mt-8">
+              <button type="submit" class="btn btn-block">Send</button>
             </div>
           </form>
         </div>
