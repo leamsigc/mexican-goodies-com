@@ -9,10 +9,12 @@
   "dependencies": {
     "daisyui": "^1.14.0",
     "vue": "^3.2.11",
+    "vue-i18n": "^9.1.7",
     "vue-router": "4",
     "vuex": "^4.0.2"
   },
   "devDependencies": {
+    "@intlify/vite-plugin-vue-i18n": "^2.4.0",
     "@tailwindcss/jit": "^0.1.18",
     "@types/node": "^16.9.1",
     "@typescript-eslint/eslint-plugin": "^4.30.0",
