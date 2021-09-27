@@ -1,4 +1,5 @@
 <script setup lang="ts">
+import { useI18n } from 'vue-i18n'
 import Button from './forms/Button.vue'
 interface link {
   id: number
@@ -11,6 +12,12 @@ interface Props {
   links: link[]
 }
 const props = defineProps<Props>()
+function HandleChangeLocale(value: string) {
+  locale.value = value
+}
+const { t, locale } = useI18n({
+  useScope: 'global'
+})
 </script>
 
 <template>
@@ -26,7 +33,12 @@ const props = defineProps<Props>()
           </label>
         </div>
         <div class="flex-1 px-2 mx-2">
-          <span> {{ title }} </span>
+          <h2 class="md:text-2xl font-bold">
+            <strong> <span class="text-green-500">MEXI</span><span class="text-gray-100">CANGOO</span><span class="text-red-500">DIES</span></strong>
+          </h2>
+          <div class="btn-group p-4">
+            <button class="btn btn-xs" :class="{ 'btn-active': lang === locale }" v-for="lang in ['en', 'de', 'es']" @click="HandleChangeLocale(lang)">{{ lang }}</button>
+          </div>
         </div>
         <div class="flex-none hidden lg:block">
           <ul class="menu horizontal">
@@ -36,6 +48,7 @@ const props = defineProps<Props>()
               </router-link>
             </li>
           </ul>
+          <button class="btn btn-primary">Add my Bussines</button>
         </div>
       </div>
       <slot></slot>

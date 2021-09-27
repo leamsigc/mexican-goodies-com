@@ -65,20 +65,11 @@ export default {
 <template>
   <div class="min-h-screen grid grid-cols-1 md:grid-cols-2">
     <div class="text-center grid place-content-center bg-base-200">
+      <div class="btn-group p-4">
+        <button class="btn btn-xs" :class="{ 'btn-active': lang === locale }" v-for="lang in ['en', 'de', 'es']" @click="HandleChangeLocale(lang)">{{ lang }}</button>
+      </div>
       <div class="max-w-md">
-        <div class="btn-group">
-          <button class="btn btn-outline btn-sm" :class="{ 'btn-active': lang === locale }" v-for="lang in ['en', 'de', 'es']" @click="HandleChangeLocale(lang)">{{ lang }}</button>
-        </div>
-        <div class="dropdown">
-          <div tabindex="0" class="m-1 btn">{{ t('language') }}</div>
-          <ul tabindex="0" class="p-2 shadow menu dropdown-content bg-base-100 rounded-box w-52">
-            <li v-for="lang in ['en', 'de', 'es']" class="mb-1">
-              <button @click="HandleChangeLocale(lang)" class="btn btn-outline btn-block">{{ lang }}</button>
-            </li>
-          </ul>
-        </div>
-
-        <h1 class="mb-5 text-5xl font-bold">
+        <h1 class="mb-5 md:text-5xl font-bold">
           <strong> <span class="text-green-500">MEXI</span><span class="text-gray-100">CANGOO</span><span class="text-red-500">DIES</span></strong>
         </h1>
         <h6>{{ t('title') }}</h6>

@@ -7,7 +7,7 @@ interface link {
 }
 const links: link[] = [
   { id: 1, name: 'Home', path: '/' },
-  { id: 2, name: 'About Us', path: '/about' }
+  { id: 2, name: 'About Us', path: '/countdown' }
 ]
 </script>
 <template>

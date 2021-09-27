@@ -1,25 +1,23 @@
 <script setup lang="ts">
 import { useI18n } from 'vue-i18n'
-const { t, locale } = useI18n({
+const { t } = useI18n({
   useScope: 'global'
 })
 </script>
 <template>
-  <div class="hero min-h-screen bg-base-200">
-    <div class="text-center hero-content">
-      <form>
-        <label>{{ t('language') }}</label>
-        <select v-model="locale">
-          <option value="en">en</option>
-          <option value="ja">ja</option>
-        </select>
-      </form>
-      <p>{{ t('hello') }}</p>
-      <div class="max-w-md">
-        <h1 class="mb-5 text-5xl font-bold">Hello there</h1>
-        <p class="mb-5">Provident cupiditate voluptatem et in. Quaerat fugiat ut assumenda excepturi exercitationem quasi. In deleniti eaque aut repudiandae et a id nisi.</p>
-        <button class="btn btn-primary">Get Started</button>
-      </div>
+  <div class="min-h-screen bg-base-300 container text-center py-10">
+    <div class="max-w-5xl mx-auto">
+      <h1 class="mb-3 text-5xl font-bold">Mexicano viviendo en alemania ?</h1>
+      <p class="mb-5 max-w-lg mx-auto">Te as preguntado donde puedes encontrar tu producto favorito or cual es el mejor restaurante mexicano en el Alemania?</p>
+      <p class="mt-10 text-xs max-w-4xl mx-auto">
+        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Corporis, quis. Odit ea quasi fugiat dolorem. Nesciunt tempore doloribus suscipit porro it amet consectetur adipisicing elit.
+        Corporis, quis. Odit ea quasi fugiat dolorem. Nesciunt tempore doloribus suscipit porro.
+      </p>
+    </div>
+    <h2 class="mt-20 text-4xl font-bold">Negocio especial del mes</h2>
+    <div class="card bg-black max-w-xl mx-auto mt-5">
+      <div class="card-title">Hello</div>
+      <div class="card-side">Side</div>
     </div>
   </div>
 </template>
@@ -29,7 +27,7 @@ const { t, locale } = useI18n({
     "language": "Language",
     "hello": "hello, world!"
   },
-  "ja": {
+  "de": {
     "language": "言語",
     "hello": "こんにちは、世界！"
   }
