@@ -1,4 +1,5 @@
 <script setup lang="ts">
+import TheFooter from '../components/TheFooter.vue'
 import { useI18n } from 'vue-i18n'
 import Button from './forms/Button.vue'
 interface link {
@@ -36,7 +37,7 @@ const { t, locale } = useI18n({
           <h2 class="md:text-2xl font-bold">
             <strong> <span class="text-green-500">MEXI</span><span class="text-gray-100">CANGOO</span><span class="text-red-500">DIES</span></strong>
           </h2>
-          <div class="btn-group p-4">
+          <div class="btn-group md:p-4 ml-2 md:ml-0">
             <button class="btn btn-xs" :class="{ 'btn-active': lang === locale }" v-for="lang in ['en', 'de', 'es']" @click="HandleChangeLocale(lang)">{{ lang }}</button>
           </div>
         </div>
@@ -48,10 +49,13 @@ const { t, locale } = useI18n({
               </router-link>
             </li>
           </ul>
-          <button class="btn btn-primary">Add my Bussines</button>
+          <router-link to="/countdown" class="btn btn-primary">Add my Bussines</router-link>
         </div>
       </div>
-      <slot></slot>
+      <div class="overflow-y-scroll">
+        <slot></slot>
+        <TheFooter />
+      </div>
     </div>
     <div class="drawer-side">
       <label for="my-drawer-3" class="drawer-overlay"></label>

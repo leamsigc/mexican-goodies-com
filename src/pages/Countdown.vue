@@ -8,7 +8,7 @@ export default {
     TheFooter
   },
   setup() {
-    const futureDate = new Date('2021-09-29T00:00:00')
+    const futureDate = new Date('2021-10-10T00:00:00')
     const getDateDiff = (date1: Date, date2: Date) => {
       const diff = new Date(date2.getTime() - date1.getTime())
       const numberDiff = Number(date1) - Number(date2)
