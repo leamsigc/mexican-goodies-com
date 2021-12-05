@@ -1,8 +1,22 @@
 <script setup lang="ts">
+import { ref } from 'vue'
+import RegularBusiness from '@/components/RegularBusiness.vue'
+import SponsoredBusiness from '@/components/SponsoredBusiness.vue'
 import { useI18n } from 'vue-i18n'
+
 const { t } = useI18n({
   useScope: 'global'
 })
+const allBusiness = ref([
+  {
+    name: 'Mexhaus',
+    desc: 'Tienda online con mas de 1000 productos auténticos mexicanos! Gracias por la iniciativa! Mucho éxito!',
+    contact: 'service@ramirezhandels-gmbh.de',
+    link: 'https://mexhaus.de',
+    bgImage: 'https://www.mexhaus.de/media/image/0b/0f/b4/Mexhaus-Newsletter_DE_800x800.png',
+    address: 'Tastrasse 95a, 79286 Glottertal'
+  }
+])
 </script>
 <template>
   <div class="min-h-screen bg-base-300 py-10 px-2 md:px-0">
@@ -60,17 +74,7 @@ const { t } = useI18n({
         <div class="h-full opacity-40 md:opacity-80">
           <img src="/img/mexican-goodies-gold.jpg" class="image-full img-responsive w-full rounded-tl-md rounded-bl-md" />
         </div>
-        <div class="card-body">
-          <h2 class="card-title text-blue-500">
-            {{ t('sponsor.gold.name') }}
-            <div class="badge badge-warning mx-2">GOLD</div>
-          </h2>
-          <p class="font-light text-xs">{{ t('sponsor.gold.type') }}</p>
-          <p class="font-light text-xs">{{ t('sponsor.gold.contact') }}</p>
-          <p class="font-light text-2xs my-2 mb-5 opacity-60">{{ t('sponsor.gold.desc') }}</p>
-
-          <button class="btn btn-primary btn-sm">{{ t('sponsor.gold.btn') }}</button>
-        </div>
+        <SponsoredBusiness />
       </div>
     </div>
     <section class="text-gray-100 body-font">
@@ -81,17 +85,7 @@ const { t } = useI18n({
           </h3>
         </div>
         <div class="flex flex-wrap -m-4">
-          <div class="lg:w-1/3 sm:w-1/2 p-4" v-for="number in 12">
-            <div class="flex relative rounded">
-              <img alt="gallery" class="absolute inset-0 w-full h-full object-cover object-center rounded opacity-70" src="https://dummyimage.com/600x360" />
-              <div class="px-8 py-10 relative z-10 w-full border-4 border-gray-800 bg-gray-800 opacity-0 hover:opacity-100 rounded transition-opacity ease-in-out">
-                <h2 class="card-title text-blue-500">The bussines</h2>
-                <p class="tfont-light text-xs font-medium mb-3">Shooting Stars</p>
-                <p class="font-light text-2xs leading-relaxed">Photo booth fam kinfolk cold-pressed sriracha leggings jianbing microdosing tousled waistcoat.</p>
-                <button class="btn btn-accent btn-sm mt-5 btn-block">{{ t('sponsor.gold.btn') }}</button>
-              </div>
-            </div>
-          </div>
+          <RegularBusiness v-for="b in allBusiness" :business="b" />
         </div>
       </div>
     </section>
@@ -100,7 +94,7 @@ const { t } = useI18n({
 <i18n global>
 {
   "es": {
-    "language": "Language",
+    "language": "Idioma",
     "home":{
       "title":"¿Mexicano viviendo en Alemania?",
       "subtitle":"¿Te has preguntado donde puedo encontrar tu producto favorito?",
@@ -113,6 +107,7 @@ const { t } = useI18n({
       "type":"Piñatas",
       "contact":"In der Hohl 10, 35753",
       "btn":"CONTACT",
+      "btnLink":"https://www.facebook.com/valentina.pinatas.de",
       "desc":"Somos una empresa joven que se fundó en julio de 2013.¡Nuestro trabajo es diseñar y fabricar hermosas piñatas! En eso estamos especializados y ponemos mucho énfasis en el diseño, la calidad y el rendimiento. Todas las piñatas están hechas a mano con gran atención al detalle."
       }
     },
@@ -120,9 +115,49 @@ const { t } = useI18n({
       "title":"Negocios más populares"
     }
   },
+  "en": {
+    "language": "Language",
+    "home":{
+      "title":"Mexican living in Germany?",
+      "subtitle":"Have you ever wondered where I can find your favorite product?",
+      "desc":"Here we bring you the most complete, up-to-date list of Mexican businesses in Germany, where you can find everything you need. From a piñata to where is the best and most authentic Mexican restaurant in your area."
+    },
+    "sponsor":{
+      "title":"Special business of the month",
+      "gold":{
+      "name":"Valentina Piñatas",
+      "type":"Piñatas",
+      "contact":"In der Hohl 10, 35753",
+      "btn":"CONTACT",
+      "btnLink":"https://www.facebook.com/valentina.pinatas.de",
+      "desc":"We are a young company founded in July 2013, our job is to design and manufacture beautiful piñatas! That is what we specialize in and we put a lot of emphasis on design, quality and performance. All piñatas are handmade with great attention to detail."
+      }
+    },
+    "populars":{
+      "title":"Most popular businesses"
+    }
+  },
   "de": {
-    "language": "言語",
-    "hello": "こんにちは、世界！"
+    "language": "Sprache",
+    "home":{
+      "title":"Ein Mexikaner, der in Deutschland lebt?",
+      "subtitle":"Haben Sie sich schon einmal gefragt, wo ich Ihr Lieblingsprodukt finden kann?",
+      "desc":"Hier finden Sie die vollständigste und aktuellste Liste mexikanischer Unternehmen in Deutschland, in der Sie alles finden können, was Sie brauchen. Von einer Piñata bis hin zum besten und authentischsten mexikanischen Restaurant in Ihrer Nähe. "
+    },
+    "sponsor":{
+      "title":"Besonderes Geschäft des Monats",
+      "gold":{
+      "name":"Valentina Piñatas",
+      "type":"Piñatas",
+      "contact":"In der Hohl 10, 35753",
+      "btn":"CONTACT",
+      "btnLink":"https://www.facebook.com/valentina.pinatas.de",
+      "desc":"Wir sind ein junges Unternehmen, das im Juli 2013 gegründet wurde und unsere Aufgabe ist es, schöne Piñatas zu entwerfen und herzustellen! Wir sind darauf spezialisiert und legen großen Wert auf Design, Qualität und Leistung. Alle Piñatas werden mit viel Liebe zum Detail handgefertigt."
+      }
+    },
+    "populars":{
+      "title":"Beliebteste Unternehmen"
+    }
   }
 }
 </i18n>
